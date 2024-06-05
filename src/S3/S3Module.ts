@@ -16,6 +16,7 @@ import { configKey, IConfig } from '@nmxjs/config';
             accessKeyId: config.s3.accessKey,
             secretAccessKey: config.s3.secretKey,
           },
+          s3ForcePathStyle: config.s3.forcePathStyle,
         }),
       inject: [configKey],
     },

@@ -5,6 +5,7 @@ declare module '@nmxjs/config' {
       secretKey: string;
       endpoint: string;
       bucket: string;
+      forcePathStyle?: boolean;
     };
   }
   const configKey: string;
