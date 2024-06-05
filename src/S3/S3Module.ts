@@ -1,9 +1,10 @@
 import { S3, Endpoint } from 'aws-sdk';
-import { Module } from '@nestjs/common';
+import { Global, Module } from '@nestjs/common';
 import { s3Key } from './constants';
 import { IS3Client } from './interfaces';
 import { configKey, IConfig } from '@nmxjs/config';
 
+@Global()
 @Module({
   providers: [
     {
