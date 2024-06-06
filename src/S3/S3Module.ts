@@ -10,6 +10,15 @@ import { configKey, IConfig } from '@nmxjs/config';
     {
       provide: s3ClientKey,
       useFactory: (config: IConfig): IS3Client => {
+        if (process.env.NODE_ENV === 'test') {
+          return {
+            upload: async () => ({
+              url: 'test',
+            }),
+            delete: async () => undefined,
+          };
+        }
+
         const s3 = new S3({
           endpoint: new Endpoint(config.s3.endpoint),
           credentials: {
