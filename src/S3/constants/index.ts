@@ -1,1 +1,1 @@
-export * from './s3Key';
+export * from './s3ClientKey';
